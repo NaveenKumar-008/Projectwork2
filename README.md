@@ -1,58 +1,53 @@
-## Title of the Project
-Small description about the project like one below
-The integration of a chatbot within a hostel booking system, aimed at streamlining the reservation process for students and improving the overall user experience.
+## VEHICLE SECURITY SYSTEM USING FACE RECOGNITION
+High number of motor vehicle thefts, especially motorcycles, remains unresolved.Intelligent security system using facial recognition to identify vehicle owners.Notification system alerts when a non-owner drives the motorcycle.Increase motorcycle security, minimize theft, and enhance rider safety.Literature review of past research to propose a novel system for early owner detection.
+
 
 ## About
-<!--Detailed Description about the project-->
-Tailored Chatbot for Hostel Booking System is a project designed to integrate a chatbot that leverages advanced natural language processing techniques to understand and respond to user queries to the hostel booking system. Traditional hostel booking processes are often time-consuming and involve manual searches and extensive communication with hostel staff. This project seeks to overcome these challenges by creating an easy-to-use chatbot interface that assists students in addressing inquiries.
+Vehicle theft remains a significant issue, causing financial losses and safety concerns for owners.Traditional security systems like key locks, remote controls, and alarms are vulnerable to modern theft methods (e.g., key duplication, signal interception, and hacking).These systems lack personalized access control, allowing potential misuse or unauthorized access.There is a need for an advanced security mechanism that is robust, reliable, and user-friendly.Face recognition technology offers a non-intrusive, efficient, and accurate solution for personalized vehicle access.Integrating facial recognition into vehicle security can minimize theft risks and improve overall safety by allowing access only to authorized users.
+
 
 ## Features
-<!--List the features of the project as shown below-->
-- Implements advance neural network method.
-- A framework based application for deployment purpose.
-- High scalability.
-- Less time complexity.
-- A specific scope of Chatbot response model, using json data format.
+- Facial Recognition Authentication
+- Real-Time Monitoring & Alerts
+- Multi-Factor Authentication (MFA)
+- Vehicle Tracking & Geo-Fencing
 
 ## Requirements
-<!--List the requirements of the project as shown below-->
-* Operating System: Requires a 64-bit OS (Windows 10 or Ubuntu) for compatibility with deep learning frameworks.
-* Development Environment: Python 3.6 or later is necessary for coding the sign language detection system.
-* Deep Learning Frameworks: TensorFlow for model training, MediaPipe for hand gesture recognition.
-* Image Processing Libraries: OpenCV is essential for efficient image processing and real-time hand gesture recognition.
-* Version Control: Implementation of Git for collaborative development and effective code management.
-* IDE: Use of VSCode as the Integrated Development Environment for coding, debugging, and version control integration.
-* Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), TensorFlow GPU, OpenCV, and Mediapipe for deep learning tasks.
+H/W SYSTEM CONFIGURATION:
+•Processor – I3, i5,i7
+•RAM - 8 Gb
+•Hard Disk - 500 GB
+S/W SYSTEM CONFIGURATION:
+•Operating System - Windows 8/10
+•Scripts – Python (3.10.8)
+•Tool – IDLE (Python)
 
 ## System Architecture
-<!--Embed the system architecture diagram as shown below-->
-
-![Screenshot 2023-11-25 133637](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/a60c11f3-0a11-47fb-ac89-755d5f45c995)
+![image](https://github.com/user-attachments/assets/427641fa-ecb5-4175-8bf9-f2fc384a1845)
 
 
 ## Output
+#### Output1 - User register
+![image](https://github.com/user-attachments/assets/29c95727-7008-4cde-9904-832f7b5b89b9)
 
-<!--Embed the Output picture at respective places as shown below as shown below-->
-#### Output1 - Name of the output
 
-![Screenshot 2023-11-25 134037](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/8c2b6b5c-5ed2-4ec4-b18e-5b6625402c16)
+#### Output2 - Dashboard
+![image](https://github.com/user-attachments/assets/aa49df34-321e-45d2-a60a-622ab092089c)
 
-#### Output2 - Name of the output
-![Screenshot 2023-11-25 134253](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/5e05c981-05ca-4aaa-aea2-d918dcf25cb7)
+#### Output3 - Details of the user
+![image](https://github.com/user-attachments/assets/a3246cd0-f0aa-4f50-8d8c-5c3f59a1dafd)
 
-Detection Accuracy: 96.7%
-Note: These metrics can be customized based on your actual performance evaluations.
+#### Output4 - Alert message
+![image](https://github.com/user-attachments/assets/5e5acef1-dad0-4a72-ba69-6200bb3957bf)
 
 
 ## Results and Impact
-<!--Give the results and impact as shown below-->
-The Sign Language Detection System enhances accessibility for individuals with hearing and speech impairments, providing a valuable tool for inclusive communication. The project's integration of computer vision and deep learning showcases its potential for intuitive and interactive human-computer interaction.
-
-This project serves as a foundation for future developments in assistive technologies and contributes to creating a more inclusive and accessible digital environment.
+The continuous monitoring of the live camera feed, coupled with real-time alerts via email when unauthorized access is detected, enhances the overall security framework.The inclusion of data ensures that all sensitive user and vehicle information remains secure, addressing privacy concerns effectively.The FaceGuard system offers an innovative solution to modern vehicle security, combining cutting-edge artificial intelligence techniques with user-friendly functionality. This project not only enhances the protection of vehicles but also exemplifies the practical applications of AI in everyday security systems, paving the way for smarter and more secure transportation solutions
 
 ## Articles published / References
-1. N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods ”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-2. A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
+1.  J. A. Khan, D. -W. Lim and Y. -S. Kim, "A Deep Learning-Based IDS for Automotive Theft Detection for In-Vehicle CAN Bus," in IEEE Access, vol. 11, pp. 112814-112829, 2023, doi: 10.1109/ACCESS.2023.3323891.
+2.   M. Sohail et al., "Deep Learning Based Multi Pose Human Face Matching System," in IEEE Access, vol. 12, pp. 26046-26061, 2024, doi: 10.1109/ACCESS.2024.3366451   H. Nguyen, S. Marcel, J. Yamagishi and I. Echizen, "Master Face Attacks on Face Recognition Systems," in IEEE Transactions on Biometrics, Behavior, and Identity Science, vol. 4, no. 3, pp. 398-411, July 2022, doi: 10.1109/TBIOM.2022.3166206. .
+
 
 
 
