@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            
+            height: 100vh;
+             /* Smooth scrolling */
+            background-image: url("static/index.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        
+         .form-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            align-items: center;
+            width: 375px;
+            margin-top: 275px;
+            }
+        .form-container #form{
+
+            height: 280px;
+        }
+        .form {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form.active {
+            display: block;
+        }
+        .toggle-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form h3 {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form button {
+            padding: 10px;
+            background-color: rgb(255, 116, 2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 7px;
+        }
+
+    </style>
+</head>
+<body>
+<center>
+<div class="form-container">
+    <div class="form active" id="registerForm">
+        <h3>User Register</h3>
+        <form action="/register" method="POST">
+            <input type="text" placeholder="Name" name="name" required pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" />
+            <input type="email" placeholder="Email" name="email" required pattern="^[a-zA-Z0-9]+[a-zA-Z0-9._%+-]*@gmail\.com$" title="Please enter a valid email address (e.g., example@gmail.com)" />
+            <input type="password" placeholder="Password" name="password" required title="Password must be at least 6 characters"/>
+            <button type="submit">Register</button>
+        </form>
+        <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form" id="loginForm">
+        <h3>User Login</h3>
+        <form action="/login" method="POST">
+            <input type="email" placeholder="Email" name="email" required pattern="^[a-zA-Z0-9]+[a-zA-Z0-9._%+-]*@gmail\.com$" title="Please enter a valid email address (e.g., example@gmail.com)" />
+            <input type="password" placeholder="Password" name="password" required title="Password must be at least 6 characters" />
+            <button type="submit">Login</button>
+        </form>
+        <span class="toggle-link" onclick="toggleForms()">Don't have an account? Register</span>
+    </div>
+
+</div>
+</center>
+    <script>
+        function toggleForms() {
+            var registerForm = document.getElementById("registerForm");
+            var loginForm = document.getElementById("loginForm");
+    
+            if (registerForm.classList.contains("active")) {
+                registerForm.classList.remove("active");
+                loginForm.classList.add("active");
+            } else {
+                loginForm.classList.remove("active");
+                registerForm.classList.add("active");
+            }
+        }
+    </script>
+    <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        const nameInput = document.querySelector('input[name="name"]');
+        const emailInput = document.querySelector('input[name="email"]');
+        
+        // Name validation (only alphabets and spaces)
+        if (!/^[A-Za-z\s]+$/.test(nameInput.value)) {
+            alert("Name can only contain letters and spaces.");
+            event.preventDefault(); // Prevent form submission
+        }
+
+        // Additional email validation (if needed)
+        const emailPattern = /^[a-zA-Z0-9]+[a-zA-Z0-9._%+-]*@gmail\.com$/;
+        if (!emailPattern.test(emailInput.value)) {
+            alert("Please enter a valid email address.");
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+    </script>
+    <script>
+        // Display a window alert if the server sends an alert message
+        window.onload = function () {
+            const alertMessage = "{{ alert_message | safe }}";
+            if (alertMessage) {
+                alert(alertMessage);
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-image: url("static/bike.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: rgb(51, 51, 51);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background: #444;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #666;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .input-group, .file-upload-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label, .file-upload-group label {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .input-group input, .file-upload-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2f28b9;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2 style="color: rgb(250, 92, 0); text-transform: uppercase;">User Dashboard</h2>
+    <nav>
+        <a href="" id="showForm">Details Upload</a>
+        <a href="/track">Track</a>
+        <a href="/">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+    <form id="detailsForm" class="form-container" action='/user_details' method="POST" enctype="multipart/form-data" style="display: none;">
+        <h2>User Details</h2>
+
+        <div class="input-group">
+            <label for="name">User Name</label>
+            <input type="text" id="childname" name="name" required>
+            <span id="name-error" class="error-message"></span>
+        </div>
+
+        <div class="input-group">
+            <label for="bike">Bike Number</label>
+            <input type="text" id="bike" name="bike" placeholder="Enter Registered Bike Number" required>
+            <span id="bike-error" class="error-message"></span>
+        </div>
+
+        <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter Registered Phone Number" required>
+            <span id="phone-error" class="error-message"></span>
+        </div>
+
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Registered Email Id" required>
+            <span id="email-error" class="error-message"></span>
+        </div>
+
+        <div class="file-upload-group">
+            <label>Owner Image</label>
+            <input type="file" name="image1" required>
+        </div>
+
+        <div class="file-upload-group">
+            <label>Friend Image</label>
+            <input type="file" name="image2" required>
+        </div>
+
+        <div class="file-upload-group">
+            <label>Friend Image</label>
+            <input type="file" name="image3" required>
+        </div>
+
+        <div class="file-upload-group">
+            <label>Friend Image</label>
+            <input type="file" name="image4" required>
+        </div>
+
+        <div class="file-upload-group">
+            <label>Friend Image</label>
+            <input type="file" name="image5" required>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+      <script>
+
+        document.getElementById('showForm').addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent page refresh
+                const form = document.getElementById('detailsForm');
+                form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+            });
+
+        // Validate Name (only letters and spaces)
+        function validateName() {
+            const name = document.getElementById('childname').value;
+            const nameError = document.getElementById('name-error');
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (!name.match(namePattern)) {
+                nameError.textContent = 'Name should only contain letters and spaces.';
+                return false;
+            }
+            nameError.textContent = '';
+            return true;
+        }
+
+        function validateName1() {
+            const name = document.getElementById('parentname').value;
+            const nameError = document.getElementById('name1-error');
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (!name.match(namePattern)) {
+                nameError.textContent = 'Name should only contain letters and spaces.';
+                return false;
+            }
+            nameError.textContent = '';
+            return true;
+        }
+
+        // Validate Phone (10 digits, starting with 9, 8, 7, or 6)
+        function validatePhone() {
+            const phone = document.getElementById('phone').value;
+            const phoneError = document.getElementById('phone-error');
+            const phonePattern = /^[6-9]\d{9}$/;
+            if (!phone.match(phonePattern)) {
+                phoneError.textContent = 'Phone number must be 10 digits and start with 9, 8, 7, or 6.';
+                return false;
+            }
+            phoneError.textContent = '';
+            return true;
+        }
+        
+        function validateAdhar() {
+            const phone = document.getElementById('aadhar').value;
+            const phoneError = document.getElementById('aadhar-error');
+            const phonePattern = /^[1-9]\d{11}$/;
+            if (!phone.match(phonePattern)) {
+                phoneError.textContent = 'Enter Correct Aadhar Number';
+                return false;
+            }
+            phoneError.textContent = '';
+            return true;
+        }
+        // Validate Email (correct email format)
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('email-error');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            if (!email.match(emailPattern)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                return false;
+            }
+            emailError.textContent = '';
+            return true;
+        }
+
+        // Final form validation
+        function validateForm() {
+            return validateName() && validatePhone() && validateEmail();
+        }
+    </script>
+        <script>
+            // Display a window alert if the server sends an alert message
+            window.onload = function () {
+                const alertMessage = "{{ alert_message | safe }}";
+                if (alertMessage) {
+                    alert(alertMessage);
+                }
+            };
+        </script>
+</body>
+</html>
